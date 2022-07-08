@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar></NavBar>
-        <ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>
       </header>
+     <ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>   
     </div>
   );
 }
