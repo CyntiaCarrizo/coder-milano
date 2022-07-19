@@ -3,7 +3,7 @@ import ItemList from "./ItemList"
 
 import { useEffect, useState } from "react"
 import  promesa  from "./Promise"
-import { customFetch } from "./Productos"
+import customFetch  from "./CustomFech"
 
 
 

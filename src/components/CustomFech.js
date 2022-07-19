@@ -20,7 +20,7 @@ const product =[
         "nombre":"Imperial Golden",
         "precio":245,
         "stock":5,
-        "descripcion":"Edición limitada. una cerveza con sabor equilibrado, ligera y fácil de tomar.Una lager ideal para esos momentos en los que querés disfrutar de un sabor más suave sin resignar calidad y sabor",
+        "descripcion":"Edición limitada. Imperial Golden es una cerveza con sabor equilibrado, ligera y fácil de tomar. Una lager ideal para esos momentos en los que querés disfrutar de un sabor más suave sin resignar calidad y sabor",
         "imagen":"https://ardiaprod.vteximg.com.br/arquivos/ids/215211-1000-1000/Cerveza-Imperial-Golden-lata-473-Ml-_1.jpg?v=637713698773570000"
     },
     {
@@ -68,10 +68,11 @@ const product =[
     
 ]
 
+
 let is_ok = true;
 
 
-export const customFetch = () => {
+const customFetch =() => {
     return new Promise((resolve, reject) => {
         if (is_ok) {
             setTimeout(() => {
@@ -82,3 +83,5 @@ export const customFetch = () => {
         }
     });
 }
+
+export default customFetch
