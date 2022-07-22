@@ -5,15 +5,26 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import "./CSSpersonal/Csspersonalizado.css"
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar></NavBar>
+      <BrowserRouter>
+          <NavBar></NavBar>
+              <Routes>
+                <Route path='/' element={<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>}></Route>
+                <Route path='/category/:idCategory' element={<ItemListContainer></ItemListContainer>}></Route>
+                <Route path='/item/:idItem' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
+             </Routes>
+      </BrowserRouter>
+      
       </header>
+      
     {/*<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>*/} 
-    <ItemDetailContainer></ItemDetailContainer>
+    {/*<ItemDetailContainer></ItemDetailContainer>*/}
     </div>
   );
 }
