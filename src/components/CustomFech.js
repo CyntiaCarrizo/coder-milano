@@ -1,4 +1,4 @@
-const product =[
+export const product =[
     {
         "id":1,
         "nombre":"Imperial",
@@ -75,6 +75,8 @@ const product =[
     
     
 ]
+
+//import product from "./Products"
 
 
 let is_ok = true;

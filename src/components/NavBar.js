@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 function NavBar() {
@@ -5,8 +6,8 @@ function NavBar() {
       <>
       <nav class="navbar navbar-expand-lg navbar-light bg-orange navBar">
   <div class="container-fluid">
-  <img src="./logoo.jpg" width="75" height="75"></img>
-  <span className="init"> <a className="navbar-brand" href="#">Milano Beers & Cheers</a></span>
+ <Link to="/" ><img src="./logoo.jpg" width="75" height="75"></img>
+  <span className="init"> <a className="navbar-brand" href="#">Milano Beers & Cheers</a></span></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -15,13 +16,13 @@ function NavBar() {
       <ul className="navbar-nav">
 
         <li className="nav-item">
-         <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+        <Link to='/category/1'> <a className="nav-link" href="#">Cervezas</a></Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Productos</a>
+        <Link to='/category/5'><a className="nav-link" href="#">Energizantes</a></Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Compras Mayoristas</a>
+        <Link to='/category/2'><a className="nav-link" href="#">Vinos</a></Link> 
         </li>
         <span className="fin">
         <li className="nav-item">

@@ -73,9 +73,11 @@ margin: 10px;
 
 p {
 text-align: center;
-line-height: 30px;
+line-height: 20px;
+font-size: medium;
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 font-weight: bold;
+color: black;
 
 }
 
