@@ -7,6 +7,7 @@ function ItemList({product}){
         {
             product.length > 0
             ? product.map(item => <Item key={item.id} 
+                                        id={item.id}
                                         nombre={item.nombre}
                                         price={item.precio}
                                         stock={item.stock}

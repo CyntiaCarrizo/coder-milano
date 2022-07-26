@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+//import TerminarCompra from "./TerminarCompra";
 
 const ItemCount = ({initial = 0, stock = 5, onAdd})=>{
 
     const [rate, setRate] = useState(0);
-
+    
+    
     useEffect(()=>{
         setRate(initial);
     },[])
@@ -20,6 +22,8 @@ const ItemCount = ({initial = 0, stock = 5, onAdd})=>{
         }
     }
 
+    
+
     return(
         <>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
@@ -30,8 +34,8 @@ const ItemCount = ({initial = 0, stock = 5, onAdd})=>{
                  
                    {
                     stock
-                    ? <button class="btn btn-primary "  type="button" onClick={()=> onAdd(rate)}>Agregar al Carrito</button>
-                    : <button class="btn btn-primary" type="button" disabled>No hay stock disponible</button>
+                    ? <button class="btn btn-primary "  type="button" onClick={()=> onAdd(rate)} >Agregar al Carrito</button>
+                    : <button class="btn btn-primary" type="button" >Agregar al Carrito</button>
              }
              
             

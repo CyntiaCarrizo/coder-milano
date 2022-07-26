@@ -6,7 +6,7 @@ import { promesa } from "./Products"
 
 import { useParams } from "react-router-dom";
 import "../CSSpersonal/Csspersonalizado.css"
-import NavBar from "./NavBar"
+//import NavBar from "./NavBar"
 
 
 
