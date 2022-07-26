@@ -11,7 +11,7 @@ function ItemList({product}){
                                         price={item.precio}
                                         stock={item.stock}
                                         descripcion={item.descripcion}
-                                        image={item.imagen}/> )
+                                        imagen={item.imagen}/> )
             : <p>Cargando</p>
 
             }

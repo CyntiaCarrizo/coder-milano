@@ -15,22 +15,27 @@ const ItemDetailContainer = () => {
 
 
 
-  const[detail, setDetail] = useState([])
+  const[detail, setDetail] = useState(false)
   const {idItem} = useParams()
 
 
   useEffect(()=>{
       if (idItem === undefined) {
-            customFetch(2000, product)
+            customFetch()
       .then(result =>setDetail(result))
 
       .catch(err => console.log(err))
       
       }else{
-          customFetch(2000, product.filter(item => item.id=== parseInt(idItem)))
-        .then(result =>setDetail(result))
+          customFetch()
+        .then((result) =>{
+          const productoFiltrado= result.filter((item)=>{
+            return item.id === parseInt(idItem);
+          });
+          setDetail(productoFiltrado[0])
+        })
           .catch(err => console.log(err))
-          console.log("detail", detail)
+          
          
       }
     
@@ -40,7 +45,7 @@ const ItemDetailContainer = () => {
       <>
     
     
-      <ItemListDetail product={detail}></ItemListDetail>
+      <ItemListDetail product={detail} id={idItem}></ItemListDetail>
      
      
     

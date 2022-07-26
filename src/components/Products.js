@@ -6,7 +6,7 @@ const product =[
        "stock":10,
         "descripcion":"Su blend de maltas le otorgan un delicado color ámbar rojizo, una persistente espuma, un fino aroma a granos y un exquisito sabor balanceado entre el dulzor y el amargo. Blend de Maltas: Malta Pilsen, malta Caramelo, malta Chocolate. Ideal para acompañar embutidos, fiambres y carnes asadas.",
         "categoryId":1,
-        "imagen":"Productos/imperial.jpg"
+        "imagen":"https://club23.com.ar/wp-content/uploads/2021/08/ImperialRoja.jpg"
     },
     {
         "id":2,
@@ -15,37 +15,29 @@ const product =[
         "stock":15,
        " descripcion":"Cerveza Imperial APA: APA es una Pale Ale de origen americano hecha con 100% de lúpulo Cascade y maltas especiales como Munich Caramelo y algo de Tostada que le da cuerpo a la cerveza y un equilibrio perfecto.",
         "categoryId":1,
-        "imagen":"Productos/imperialapa.jpg"
+        "imagen":"https://www.espaciovino.com.ar/media/default/0001/63/thumb_62695_default_medium.jpeg"
     },
-      {
-        "id":3,
-        "nombre":"Imperial Golden",
-        "precio":245,
-        "stock":25,
-        "descripcion":"Edición limitada. Imperial Golden es una cerveza rubia edición limitada, de contextura suave y con sabor muy refrescante. Contiene un IBU de 8, y su contenido alcohólico (ABV), es de 4,7%. una cerveza con sabor equilibrado, ligera y fácil de tomar.Una lager ideal para esos momentos en los que querés disfrutar de un sabor más suave sin resignar calidad y sabor",
-        "categoryId":1,
-       " imagen":"Productos/imperialgolden.jpg"
-    },
+      
     {
-        "id":4,
+        "id":3,
         "nombre":"Imperial Ipa",
         "precio":230,
         "stock":100,
        " descripcion":"La India Pale Ale (IPA), es un estilo de cerveza proveniente de Inglaterra con gran carácter, que se ve reflejado en su mayor graduación alcohólica y mayor amargor que las cervezas rubias tradicionales. La graduación alcohólica es de 6% Vol. La desarrollada por Imperial contiene doble Lúpulo: Mandarina Bavaria y Cascade.",
         "categoryId":1,
-        "imagen":"Productos/imperialipa.jpg"
+        "imagen":"http://inspiravinoteca.com/web/image/product.template/4487/image_1024?unique=4476396"
     },
     {
-        "id":5,
+        "id":4,
         "nombre":"Patagonia Kune",
         "precio":185,
         "stock":50,
         "descripcion":"La Patagonia Pale Ale presenta una combinación de maltas especiales, que da lugar a una cerveza de color dorado bronce brillante de leve amargor y cuerpo medio. Cerveza muy balanceada y fácil de tomar.",
         "categoryId":1,
-        "imagen":"Productos/patagonia.jpg"
+        "imagen":"https://gobar.vteximg.com.br/arquivos/ids/157555-1000-1000/patagonia-kune-lata-473--2-.jpg?v=637235178939530000"
     },
     {
-        "id":6,
+        "id":5,
         "nombre":"Cosecha Tardia Rosada",
         "precio":185,
         "stock":75,
@@ -54,7 +46,7 @@ const product =[
         "imagen":"https://ardiaprod.vteximg.com.br/arquivos/ids/223908-1000-1000/Vino-Blanco-Norton-Cosecha-Tardia-750-Ml-_1.jpg?v=637873493818530000"
     },
     {
-        "id":7,
+        "id":6,
         "nombre":"Cosecha Tardia Blanco Norton",
         "precio":185,
         "stock":100,
@@ -63,13 +55,13 @@ const product =[
         "imagen":"https://www.espaciovino.com.ar/media/default/0001/60/thumb_59587_default_medium.jpeg"
     },
     {
-        "id":8,
+        "id":7,
         "nombre":"Red Bull",
         "precio":185,
        " stock":156,
         "descripcion":"Es una bebida energizante, creada para estimular el cerebro en personas sometidas a un gran esfuerzo físico y nunca para ser consumido como una bebida inocente o refrescante. Contiene, principalmente agua, azúcar (sacarosa, glucosa), cafeína, taurina, así como diferentes vitaminas (niacina, ácido pantoténico, B6 y B12).",
         "categoryId":5,
-        "imagen":"https://cdnx.jumpseller.com/dc-central-distribuidora-de-licores/image/16063932/resize/540/540?1646775862"
+        "imagen":"https://www.espaciovino.com.ar/media/default/0001/58/thumb_57441_default_big.jpeg"
     },
 
     

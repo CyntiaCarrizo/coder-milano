@@ -13,7 +13,7 @@ import NavBar from "./NavBar"
 
 
 function ItemListContainer(greeting){
-    <NavBar></NavBar>
+   
    /* const onAdd=(cantidad)=>{
         alert(`La cantidad de productos seleccionado es: ${cantidad}`)
     }*/
