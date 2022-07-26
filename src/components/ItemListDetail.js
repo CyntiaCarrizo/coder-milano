@@ -11,7 +11,7 @@ function ItemListDetail({product,  id, }){
     return(
         <>
         {
-           product.id === parseInt(id) ? <ItemDetail id={id} ></ItemDetail> : "cargando"
+           product.id === parseInt(id) ? <ItemDetail id={id} nombre={product.nombre} precio={product.precio} descripcion={product.descripcion} stock={product.descripcion} imagen={product.imagen} stock={product.stock}></ItemDetail> : "cargando"
            
        
         
