@@ -6,7 +6,8 @@ import ItemListContainer from './components/ItemListContainer';
 import "./CSSpersonal/Csspersonalizado.css"
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ItemDetail from './components/ItemDetail';
+
+import Cart from './components/Cart';
 
 
 
@@ -20,7 +21,7 @@ function App() {
                 <Route path='/' element={<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>}></Route>
                 <Route path='/category/:idCategory' element={<ItemListContainer></ItemListContainer>}></Route>
                 <Route path='/item/:idItem' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
-                <Route path='/cart' element={<ItemDetail></ItemDetail>}></Route>
+                <Route path='/cart' element={<Cart></Cart>}></Route>
              </Routes>
       </BrowserRouter>
       
