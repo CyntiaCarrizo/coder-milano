@@ -6,15 +6,18 @@ import ItemListContainer from './components/ItemListContainer';
 import "./CSSpersonal/Csspersonalizado.css"
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import Cart from './components/Cart';
-
+import {CartContext} from './components/CartContext';
+import CartContextProvider from './components/CartContext';
 
 
 function App() {
   return (
+    <>
+    <CartContextProvider>
     <div className="App">
       <header className="App-header">
+     
       <BrowserRouter>
           <NavBar></NavBar>
               <Routes>
@@ -30,7 +33,10 @@ function App() {
     {/*<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>*/} 
     {/*<ItemDetailContainer></ItemDetailContainer>*/}
     </div>
-  );
+    </CartContextProvider>
+  </>
+   );
+ 
 }
 
 export default App;

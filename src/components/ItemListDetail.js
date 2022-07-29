@@ -7,7 +7,8 @@ import ItemDetail from "./ItemDetail"
 
 
 function ItemListDetail({product,  id, }){
-    console.log(product, "soy el item list detail")
+    //console.log(product, "soy el item list detail")
+    
     return(
         <>
         {
