@@ -1,13 +1,24 @@
+import { useEffect } from "react"
 import Item from "./Item"
 
-function ItemList({product}){
-    console.log(product, "soy el item list")
-    
+const ItemList=({product})=>{
+
+  useEffect(()=>{
+    //ComponentDidMount
+    console.log("ItemList Renderizado en componentDidMount")
+  },[])
+  
+  useEffect(()=>{
+    //ComponentDidUpdate
+    console.log("ItemList Renderizado en componentDidUpdate")
+  },[product])
+
+
     return(
         <>
         {
             product.length > 0
-            ? product.map(item => <Item key={item.id} 
+            ? product.map((item, i ) => <Item key={i} 
                                         id={item.id}
                                         nombre={item.nombre}
                                         price={item.precio}

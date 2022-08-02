@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ItemCount = ({initial = 0, stock = 5, onAdd})=>{
+const ItemCount = ({initial = 0, stock = 5, onAdd, id})=>{
 
 
     const [rate, setRate] = useState(0);
@@ -11,14 +11,14 @@ const ItemCount = ({initial = 0, stock = 5, onAdd})=>{
         setRate(initial);
     },[])
 
-    const increment = () =>{
+    const increment = (id) =>{
         if (rate < stock){
             setRate(rate+1);
         }
     }
 
-    const decremento = () =>{
-        if(rate <= stock && rate > initial){
+    const decremento = (id) =>{
+        if(rate <= stock && rate.id > initial){
             setRate(rate-1);
         }
     }
@@ -27,9 +27,9 @@ const ItemCount = ({initial = 0, stock = 5, onAdd})=>{
     return(
         <>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-             <button class="btn btn-primary me-md-2" type="button" onClick={increment}>+</button>
+             <button class="btn btn-primary me-md-2" type="button" onClick={()=>increment(id)}>+</button>
              <p>Cantidad: <span>{rate}</span></p>
-             <button class="btn btn-primary" type="button" onClick={decremento}>-</button>
+             <button class="btn btn-primary" type="button" onClick={()=>decremento(id)}>-</button>
        
                    {
                     stock

@@ -7,19 +7,27 @@ import { CartContext } from "./CartContext";
 
 
 
-const ItemDetail=({nombre, precio, stock, descripcion, imagen, product,rate })=>{
 
-            const[BotonActivo, setBotonActivo]=useState(false)
+
+const ItemDetail=({nombre, precio, stock, descripcion, imagen, product,rate,id })=>{
+
+           const[BotonActivo, setBotonActivo]=useState(false)
             
+       
             const test = useContext(CartContext)
-    
-            const onAdd=(rate)=>{
-       alert(`La cantidad de productos seleccionado es: ${rate} `)
+   // const {addToCart} = useContext(CartContext)
+           const onAdd=(rate,id)=>{
+          
+          
+       alert(`La cantidad de productos seleccionado es: ${rate}  `)
       
      setBotonActivo(true)
-     test.addToCart(product)
-     console.log(product)
-      }
+   //  console.log(rate) 
+   //let productosId = product.filter(el => el.id === product.id)
+   //        console.log(productosId)
+   test.addToCart(product)
+   // console.log(product.id)
+    }
 
     return(
                  <div className="card border-success mb-3" >
@@ -33,13 +41,13 @@ const ItemDetail=({nombre, precio, stock, descripcion, imagen, product,rate })=>
                 <p className="card-text Detalles ">Stock Disponible: {stock}</p>
               
              {
-             BotonActivo? <Link to={"/Cart"}> <button  >Finalizar compra  </button></Link> : <ItemCount initial={0} stock={5} onAdd={onAdd} onClick={()=>onAdd(rate)} ></ItemCount>
+             BotonActivo? <Link to={"/cart"}> <button  >Finalizar compra  </button></Link> : <ItemCount initial={0} stock={5} onAdd={onAdd} onClick={()=>onAdd(rate,id)} ></ItemCount>
              }
           
              </div>
           
   )
 }
+
         
-    
-export default ItemDetail
+export default ItemDetail;

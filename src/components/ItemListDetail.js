@@ -1,33 +1,30 @@
-//import ItemDetail from "./ItemDetail"
-//import ItemCount from "./ItemCount"
+
 
 import ItemDetail from "./ItemDetail"
 
 
 
-
-function ItemListDetail({product,  id, }){
-    //console.log(product, "soy el item list detail")
-    
+function ItemListDetail({product, id, nombre}){
+     console.log(product, `soy el item list detail del producto ${nombre} e id ${id}`)
     return(
         <>
         {
-           product.id === parseInt(id) ? <ItemDetail id={id} nombre={product.nombre} precio={product.precio} descripcion={product.descripcion} stock={product.descripcion} imagen={product.imagen} stock={product.stock}></ItemDetail> : "cargando"
-           
-       
-        
+           product.id === parseInt(id) ? (<ItemDetail 
+                                            id={product.id} 
+                                            nombre={product.nombre} 
+                                            precio={product.precio} 
+                                            descripcion={product.descripcion} 
+                                            imagen={product.imagen} 
+                                            stock={product.stock}
+                                            ></ItemDetail>) : ("cargando") 
+                                            
         }
-
+        
    </>
-       
-       
-  
-       
-
-
-
-
+   
                 )
+
+               
 }
 
 export default ItemListDetail

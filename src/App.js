@@ -11,29 +11,30 @@ import {CartContext} from './components/CartContext';
 import CartContextProvider from './components/CartContext';
 
 
+
 function App() {
   return (
     <>
-    <CartContextProvider>
+    
     <div className="App">
       <header className="App-header">
-     
+     <CartContextProvider>
       <BrowserRouter>
           <NavBar></NavBar>
               <Routes>
                 <Route path='/' element={<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>}></Route>
                 <Route path='/category/:idCategory' element={<ItemListContainer></ItemListContainer>}></Route>
                 <Route path='/item/:idItem' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
-                <Route path='/cart' element={<Cart></Cart>}></Route>
+                <Route path='/cart' element={<Cart/>}></Route>
              </Routes>
       </BrowserRouter>
-      
+       </CartContextProvider>
       </header>
       
     {/*<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>*/} 
     {/*<ItemDetailContainer></ItemDetailContainer>*/}
     </div>
-    </CartContextProvider>
+   
   </>
    );
  

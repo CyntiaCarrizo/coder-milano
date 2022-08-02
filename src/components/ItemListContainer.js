@@ -3,10 +3,11 @@ import ItemList from "./ItemList"
 
 import { useEffect, useState } from "react"
 import { promesa } from "./Products"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from "react-router-dom";
 import "../CSSpersonal/Csspersonalizado.css"
-import NavBar from "./NavBar"
+
+
 
 
 
@@ -19,14 +20,18 @@ function ItemListContainer(greeting){
     }*/
     
     const [datos, setDatos] = useState({});
+    const [prueba, setPrueba] = useState(false);
     const {idCategory} = useParams();
+   
     
+    //componentDiUpdate
     useEffect(()=>{
+       console.log("Item List Conteiner Renderizado ")
         if(idCategory=== undefined){
               async function pedirDatos(){
                 let datosLlegando = await promesa();
                  setDatos(datosLlegando)
-                 console.log(idCategory)
+               //  console.log(idCategory)
        }
        pedirDatos()
     }else{
@@ -43,11 +48,17 @@ function ItemListContainer(greeting){
        
     }
   
-},[idCategory])
+},[idCategory, prueba])
 
-console.log(idCategory)
 
-    
+
+//CompomnentWillUnmount
+    useEffect(()=>{
+        
+        return (()=> {
+            setDatos([])
+        })
+    },[]);
     
    
 
@@ -56,6 +67,7 @@ console.log(idCategory)
         <p>
         {greeting.greeting}
         </p>
+        <button class="btn btn-primary" type="button" onClick={()=>setPrueba(!prueba)}>Cambiar de estado</button>
         <ItemList product={datos}></ItemList>
        { /*<ItemCount stock={5} initial={1} onAdd={onAdd}></ItemCount>*/}
       
