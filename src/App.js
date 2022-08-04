@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart';
 import {CartContext} from './components/CartContext';
 import CartContextProvider from './components/CartContext';
+import "./utils/firebaseConf"
 
 
 
@@ -32,8 +33,7 @@ function App() {
         </BrowserRouter>
       </header>
       
-    {/*<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>*/} 
-    {/*<ItemDetailContainer></ItemDetailContainer>*/}
+ 
     </div>
    
   </>

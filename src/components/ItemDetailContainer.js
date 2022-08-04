@@ -7,7 +7,7 @@ import customFetch from './CustomFech';
 import ItemDetail from './ItemDetail';
 import {  useParams } from "react-router-dom";
 import "../CSSpersonal/Csspersonalizado.css"
-import ItemListDetail from './ItemListDetail';
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 
@@ -20,24 +20,12 @@ const ItemDetailContainer = () => {
 
 
   useEffect(()=>{
-      if (idItem === undefined) {
-            customFetch()
-      .then(result =>setDetail(result))
+  
+    const querydb= getFirestore();
+     const queryDoc = doc(querydb, "products", idItem);
+    getDoc(queryDoc)
+    .then(res => setDetail({id: res.id, ...res.data()}))
 
-      .catch(err => console.log(err))
-      
-      }else{
-          customFetch()
-        .then((result) =>{
-          const productoFiltrado= result.filter((item)=>{
-            return item.id === parseInt(idItem);
-          });
-          setDetail(productoFiltrado[0])
-        })
-          .catch(err => console.log(err))
-          
-         
-      }
     
   },[idItem])
 

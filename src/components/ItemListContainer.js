@@ -1,13 +1,12 @@
 //import ItemCount from "./ItemCount"
 import ItemList from "./ItemList"
-
 import { useEffect, useState } from "react"
 import { promesa } from "./Products"
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from "react-router-dom";
 import "../CSSpersonal/Csspersonalizado.css"
 
+import {getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
 
 
@@ -19,46 +18,26 @@ function ItemListContainer(greeting){
  
     
     const [datos, setDatos] = useState([]);
-    const [prueba, setPrueba] = useState(false);
+   
     const {idCategory} = useParams();
    
     
-    //componentDiUpdate
-    useEffect(()=>{
-       console.log("Item List Conteiner Renderizado ")
-        if(idCategory=== undefined){
-              async function pedirDatos(){
-                let datosLlegando = await promesa();
-                 setDatos(datosLlegando)
-               //  console.log(idCategory)
-       }
-       pedirDatos()
-    }else{
-        async function pedirDatos(){
-            
-            let datosLlegando = await promesa();
-            let filtrar = datosLlegando.filter(item => item.categoryId === parseInt(idCategory))
-           
-            setDatos(filtrar)
-             console.log(filtrar, datosLlegando, promesa())   
     
-      }
-         pedirDatos()
-       
-    }
-  
-},[idCategory, prueba])
-
-
-
-//CompomnentWillUnmount
     useEffect(()=>{
-        
-        return (()=> {
-            setDatos([])
-        })
-    },[]);
+
+ const querydb= getFirestore();
+     const queryCollection = collection(querydb, "products");
+     if(idCategory){
+         const queryFilter = query(queryCollection, where("categoryId", "==", "idCategory"))
+    getDocs(queryFilter)
+     .then(res => setDatos (res.docs.map(product=> ({id: product.id, ...product.data() }))))
+     }else{
+        getDocs(queryCollection)
+        .then(res => setDatos (res.docs.map(product=> ({id: product.id, ...product.data() }))))
+     }
     
+},[idCategory])
+
    
 
     return(
@@ -66,7 +45,6 @@ function ItemListContainer(greeting){
         <p>
         {greeting.greeting}
         </p>
-        <button class="btn btn-primary" type="button" onClick={()=>setPrueba(!prueba)}>Cambiar de estado</button>
         <ItemList datos={datos}></ItemList>
        { /*<ItemCount stock={5} initial={1} onAdd={onAdd}></ItemCount>*/}
       

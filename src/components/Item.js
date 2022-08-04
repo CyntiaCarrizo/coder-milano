@@ -3,11 +3,6 @@ import { useEffect } from "react"
 
 const Item = ({info})=>{
 
-  useEffect(()=>{
-    //ComponentDidmount
-    console.log("Item Renderizado")
-  },[])
-
 
     return(
     
