@@ -1,20 +1,27 @@
-import React from 'react'
-import CartContext from './CartContext'
-import { useContext } from 'react'
+import React, { useContext } from 'react';
+import { useCartContext } from './CartContext';
+import { Link } from 'react-router-dom';
+import ItemCart from './ItemCart';
 
 const Cart = () => {
-  const test = useContext(CartContext);
-  console.log(test.cartList)
+  const {cartList, totalPrice} = useCartContext();
+
+  if (cartList.length === 0){
+    return (
+      <>
+      <p>No hay elementos en el carrito </p>
+      <Link to="/">Hacer compras</Link>
+      </>
+    );
+    
+  }
   return (
-    <> 
-    <div>Soy el Carrito</div>
-    {/*
-        test.cartList.length > 0 
-        ? test.cartList.map(item => (<img image={product.imagen} class="img-thumbnail" alt="..."></img>)) 
-        : ("No hay productos en el carrito")
-  */ }
-   
-    </>
+   <>
+   {
+   cartList.map(product => <ItemCart key={product.id} product={product}></ItemCart>)
+   }
+   <p>Total: {totalPrice()} </p>
+   </>
   
   )
 }

@@ -18,17 +18,18 @@ function App() {
     
     <div className="App">
       <header className="App-header">
+    <BrowserRouter>
      <CartContextProvider>
-      <BrowserRouter>
-          <NavBar></NavBar>
+         <NavBar/>
               <Routes>
                 <Route path='/' element={<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>}></Route>
                 <Route path='/category/:idCategory' element={<ItemListContainer></ItemListContainer>}></Route>
                 <Route path='/item/:idItem' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
                 <Route path='/cart' element={<Cart/>}></Route>
              </Routes>
-      </BrowserRouter>
+    
        </CartContextProvider>
+        </BrowserRouter>
       </header>
       
     {/*<ItemListContainer greeting ="Milano es una tienda especializada en vinos, espumantes, whiskys, bebidas blancas, cervezas y regaleria."></ItemListContainer>*/} 

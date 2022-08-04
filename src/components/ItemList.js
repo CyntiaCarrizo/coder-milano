@@ -1,35 +1,24 @@
 import { useEffect } from "react"
 import Item from "./Item"
 
-const ItemList=({product})=>{
+const ItemList=({datos =[]})=>{
 
-  useEffect(()=>{
+  //useEffect(()=>{
     //ComponentDidMount
-    console.log("ItemList Renderizado en componentDidMount")
-  },[])
+  //  console.log("ItemList Renderizado en componentDidMount")
+ // },[])
   
-  useEffect(()=>{
+  //useEffect(()=>{
     //ComponentDidUpdate
-    console.log("ItemList Renderizado en componentDidUpdate")
-  },[product])
+  //  console.log("ItemList Renderizado en componentDidUpdate")
+  //},[product])
 
 
-    return(
-        <>
-        {
-            product.length > 0
-            ? product.map((item, i ) => <Item key={i} 
-                                        id={item.id}
-                                        nombre={item.nombre}
-                                        price={item.precio}
-                                        stock={item.stock}
-                                        descripcion={item.descripcion}
-                                        imagen={item.imagen}/> )
-            : <p>Cargando</p>
-
-            }
+    return( datos.map(item => <Item key={item.id} info={item} /> )
+           
+            
        
-            </>
+         
                 )
 }
 

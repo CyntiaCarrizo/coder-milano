@@ -4,7 +4,7 @@ import customFetch from './CustomFech';
 //const { product}= require ('./CustomFech');
 //import product from './Products';
 //import { product } from './CustomFech';
-//import ItemDetail from './ItemDetail';
+import ItemDetail from './ItemDetail';
 import {  useParams } from "react-router-dom";
 import "../CSSpersonal/Csspersonalizado.css"
 import ItemListDetail from './ItemListDetail';
@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 
 
 
-  const[detail, setDetail] = useState(false)
+  const[detail, setDetail] = useState({})
   const {idItem} = useParams()
 
 
@@ -45,7 +45,7 @@ const ItemDetailContainer = () => {
       <>
     
     
-      <ItemListDetail product={detail} id={idItem} ></ItemListDetail>
+      <ItemDetail detail={detail} id={idItem} ></ItemDetail>
      
      
     

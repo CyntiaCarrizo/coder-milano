@@ -32,14 +32,16 @@ function NavBar() {
 
         <span className="fin">
         <li className="nav-item">
-          <a className="nav-link" href="#">Mi Carrito</a>
+          <Link to="/cart" className="nav-link" href="#"> 
+            <CartWidget></CartWidget>
+            </Link>
         </li>
         </span>
 
       </ul>
     </div>
   </div>
-  <CartWidget></CartWidget>
+
 </nav>
       
       </>

@@ -1,59 +1,48 @@
-import  {  createContext, useState } from 'react'
+import React, { useContext } from 'react';
+import  { useState } from 'react'
 
-export const CartContext = createContext();
+export const CartContext = React.createContext([]);
+
+ export const useCartContext = () => useContext(CartContext)
   
 export const CartContextProvider = ({children})=>{
 //carList es el estado local, es decir el estado del componente CartContextProvider. lo pongo en el value para que todos tengan acceso a él (array vacio).
 
-const [cartList, setCartList] = useState ([])
+const [cartList, setCartList] = useState ([]);
 
-const addToCart =(product) =>{
-    const inCart = cartList.find((productInCart)=> productInCart.id === product.id)
-    if (inCart){
-        setCartList(
-            cartList.map((productInCart)=> {
-                if (productInCart.id === product.id ) {
-                    return{...inCart, amount: inCart.amount + 1} 
-                }else return productInCart;
-            })
-        )
-       // setCartList([...cartList, {
-       // id: product.id,
-       // name: product.nombre,
-       // imagen: product.imagen,
-       // price: product.stock,
-       // cantidad: rate
-   // }])
-    }else{
-        setCartList([...cartList, {...product, amount: + 1}])
-    
-}
+console.log("CARRITO:", cartList);
+
+const addToCart =(item, quantity) =>{
+ if (isInCart(item.id)){
+    setCartList(cartList.map(productos => {
+         return productos.id === item.id ? {...productos, quantity: productos.quantity + quantity} : productos
+    }));
+ } else {
+    setCartList ([...cartList, {...item, quantity}])
+ }
 }
 
-const deleteItemCart = (product) => {
-    const inCart= cartList.find((productInCart)=> productInCart.id === product.id);
-    if (inCart.amount === 1) {
-        setCartList(
-            cartList.filter((productInCart)=> productInCart.id !== product.id)
-        );
-        
-    } else{
-        setCartList((productInCart)=> {
-            if (productInCart.id === product.id ) {
-                return{...inCart, amount: inCart.amount - 1}
-            } else   return productInCart;
-            })
-        }
-     
-    }
-
+const totalPrice = () => {
+    return cartList.reduce((prev, act) => prev + act.quantity * act.precio, 0)
+}
+const totalProductos = () => cartList.reduce((acumulador, productoActual)=> acumulador + productoActual.quantity, 0);
+const clearCart = () => setCartList ([]);
+const isInCart = (id) => cartList.find(productos => productos.id === id) ? true : false;
+const removeProduct = (id) => setCartList(cartList.filter(productos => productos.id !== id))
 
 //funcion global. El componente que la use nos tendra que dar el item, es decir el producto que se quiera agregar al estado
    
 
 
 return (
-        <CartContext.Provider value={{cartList, addToCart, deleteItemCart}}>
+        <CartContext.Provider value={{
+         addToCart,
+         clearCart,
+         isInCart,
+         removeProduct,
+         totalPrice,
+         totalProductos,
+         cartList}}>
                 {children}
         </CartContext.Provider>
     )
