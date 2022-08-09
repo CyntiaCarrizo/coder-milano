@@ -41,7 +41,8 @@ const Cart = () => {
         })
       });
 
-       
+       //borar el carrito   
+       cartList.clearCart()
   }
 
 
