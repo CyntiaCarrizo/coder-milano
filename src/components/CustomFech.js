@@ -69,7 +69,7 @@ export const product =[
         stock:100,
         descripcion:"Es una bebida energizante, creada para estimular el cerebro en personas sometidas a un gran esfuerzo físico y nunca para ser consumido como una bebida inocente o refrescante. Contiene, principalmente agua, azúcar (sacarosa, glucosa), cafeína, taurina, así como diferentes vitaminas (niacina, ácido pantoténico, B6 y B12).",
         imagen:"https://www.espaciovino.com.ar/media/default/0001/58/thumb_57441_default_big.jpeg",
-        categoryId:3,
+        categoryId:5,
     },
     {
     amount: 0,
