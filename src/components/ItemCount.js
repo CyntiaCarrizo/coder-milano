@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 
-const ItemCount = ({initial = 0, stock = 5, onAdd, id})=>{
 
+const ItemCount = ({initial = 1, stock = 5, onAdd})=>{
 
     const [rate, setRate] = useState(0);
 
-   
-   
     useEffect(()=>{
         setRate(initial);
     },[])

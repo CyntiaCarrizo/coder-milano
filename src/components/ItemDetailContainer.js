@@ -1,9 +1,5 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import customFetch from './CustomFech';
-//const { product}= require ('./CustomFech');
-//import product from './Products';
-//import { product } from './CustomFech';
 import ItemDetail from './ItemDetail';
 import {  useParams } from "react-router-dom";
 import "../CSSpersonal/Csspersonalizado.css"

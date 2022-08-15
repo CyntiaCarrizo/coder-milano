@@ -1,4 +1,146 @@
 
+:root{
+    --orange: #F2AC29;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bangers', cursive, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+.navBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+
+/*.navBar  span{
+    color: var(--orange);
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}*/
+
+.navBar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+    text-decoration: none;
+}
+
+.navBar a:hover{
+    color: var(--orange);
+}
+
+.icons{
+    
+    position: relative;
+    left: 30px;
+    top: 0;
+    right: 0;
+    background: #fff;
+    padding:3rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+   
+}
+
+.icons svg{
+    font-size: 2.5rem;
+    color: #333;
+    margin-left: 1.5rem;
+}
+
+.icons svg:hover{
+    color: var(--orange);
+}
+
+.navBar #toggler{
+    display: none;
+
+}
+
+.navBar .bi-list{
+    font-size: 3rem;
+    color: #333;
+    border-radius: 5rem;
+    padding: 5rem 1.5rem;
+    cursor: pointer;
+    border: 1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+/*media queries navbar
+@media (max-width: 991px) {
+    html{
+        font-size: 55%;
+    }
+    
+    .navBar{
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+   .navBar .bi-list{
+        display: block;
+    }
+    
+    .navBar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: 1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0 );
+    }
+
+    .navBar #toggler:checked{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    }
+
+    .navBar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: 1rem solid rgba(0, 0, 0, .1);
+        display: block;
+    }
+   
+}*/
+
+
+
+
+
+
+
 .titulo {
     color: #F2AC29;
     font-size: 50px;

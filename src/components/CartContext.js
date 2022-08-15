@@ -10,7 +10,6 @@ export const CartContextProvider = ({children})=>{
 
 const [cartList, setCartList] = useState ([]);
 
-console.log("CARRITO:", cartList);
 
 const addToCart =(item, quantity) =>{
  if (isInCart(item.id)){

@@ -16,7 +16,6 @@ import "./utils/firebaseConf"
 function App() {
   return (
     <>
-    
     <div className="App">
       <header className="App-header">
     <BrowserRouter>
@@ -32,10 +31,7 @@ function App() {
        </CartContextProvider>
         </BrowserRouter>
       </header>
-      
- 
     </div>
-   
   </>
    );
  

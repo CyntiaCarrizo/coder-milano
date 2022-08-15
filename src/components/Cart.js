@@ -1,17 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useCartContext } from './CartContext';
 import { Link } from 'react-router-dom';
 import ItemCart from './ItemCart';
 import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
-import { async } from '@firebase/util';
 import { db } from '../utils/firebaseConf';
-import product from './Products';
+
 
 const Cart = () => {
-  const {cartList, totalPrice, clearCart, isInCart} = useCartContext();
+  
+  const {cartList, totalPrice, clearCart} = useCartContext();
 
   const createOrder=()=>{
-      let order={
+      
+    let order={
         buyer: {
           name: "carrizo cyntia",
           email: "carrizocyntia22@gmail.com",
@@ -22,8 +23,7 @@ const Cart = () => {
         total: totalPrice(),
 
       }
-      console.log(order)
-
+    
       const createOrderInFirestore = async()=>{
         const newOrderRef = doc(collection(db, "orders"))
         await setDoc(newOrderRef, order)
