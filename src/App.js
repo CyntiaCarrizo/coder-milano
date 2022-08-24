@@ -7,7 +7,6 @@ import "./CSSpersonal/Csspersonalizado.css"
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart';
-import {CartContext} from './components/CartContext';
 import CartContextProvider from './components/CartContext';
 import "./utils/firebaseConf"
 

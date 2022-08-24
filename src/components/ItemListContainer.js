@@ -39,10 +39,7 @@ function ItemListContainer(greeting){
 
     return(
         <>
-        <p>
-        {greeting.greeting}
-        </p>
-        <ItemList datos={datos}></ItemList>
+               <ItemList datos={datos}></ItemList>
           
         </>
     )

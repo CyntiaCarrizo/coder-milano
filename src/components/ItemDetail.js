@@ -26,20 +26,30 @@ const ItemDetail=({detail })=>{
     }
 
     return(
-            <div className="card border-success mb-3" >
-                <img style={{width: "450px", height:"550px"}} className="Tarjeta-detalles" src={detail.imagen} class="card-img-top" alt="..."></img>
-                    <h5 className="card-title">{detail.nombre}</h5>
-                <div className="card-body text-success">
-                  <p className="Detalles">{detail.descripcion}</p>
-                  <p className="card-title">${detail.precio}</p>
-                </div>
-                  <p className="card-text Detalles ">Stock Disponible: {detail.stock}</p>
-              
-             {
-                BotonActivo? <Link to={"/cart"}> <button  >Finalizar compra  </button></Link> : <ItemCount initial={0} stock={5} onAdd={onAdd}  ></ItemCount>
-             }
-          
+      <>
+      <div className="ItemDetail">
+       <div className="details">
+        <div className="big-img">
+        <img style={{width: "250px", height:"350px"}}  src={detail.imagen} class="card-img-top" alt="..."></img>
+        </div>
+          <div className="box">
+            <div className="row">
+              <h3>{detail.nombre}</h3>
+              <span>${detail.precio}</span>
             </div>
+               <p>{detail.descripcion}</p>
+                <p>Stock Disponible: {detail.stock}</p>
+                
+                {
+                BotonActivo? <Link to={"/cart"}> <button className="cart" >Finalizar compra  </button></Link> : <ItemCount initial={1} stock={detail.stock} onAdd={onAdd}  ></ItemCount>
+             }
+             
+          </div>
+      </div>
+      </div>
+    
+      </>
+            
           
   )
 }
